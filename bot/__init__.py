@@ -1,4 +1,5 @@
 import os
+from telegram.ext import Updater
 from config import Config
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
