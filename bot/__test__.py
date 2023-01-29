@@ -15,7 +15,7 @@ try:
  if not os.path.exists(s):
   os.makedirs(s)
  print (s)
- q = '/app/vendor/firefox/firefox'
+ q = '/snap/bin/firefox'
  binary = FirefoxBinary(q)
  updater = Updater(token = Config.BOT_TOKEN, use_context=True)
  dp = updater.dispatcher
@@ -32,7 +32,7 @@ try:
  options.add_argument("--headless")
  #options.add_argument("--window-size=1200,800")
  options.add_argument("--disable-blink-features=AutomationControlled")
- browser = webdriver.Firefox(options=options, executable_path='/app/vendor/geckodriver', firefox_binary=binary, desired_capabilities=desired, service_args=["--marionette-port", "2828"])
+ browser = webdriver.Firefox(options=options, executable_path='/snap/bin/firefox', firefox_binary=binary, desired_capabilities=desired, service_args=["--marionette-port", "2828"])
  #browser.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 except Exception as e:
  print(e)
