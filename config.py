@@ -1,11 +1,11 @@
 
 import os
 class Config(object):
-    BOT_TOKEN = os.environ.get('BOT_TOKEN')
+    BOT_TOKEN = os.environ.get('BOT_TOKEN''5968326812:AAFYPwE4A_gch9krM0UNYV95e_z-Rh2ZQTw')
     SCHEDULE = os.environ.get('SCHEDULE', False)
-    USERID = os.environ.get('USERID')
-    PATH = os.environ.get('PATH', "/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox")
-    LD_LIBRARY_PATH = os.environ.get('LD_LIBRARY_PATH', "/usr/local/lib:/usr/lib:/lib:/app/vendor/firefox")
+    USERID = os.environ.get('USERID','1930954213')
+    PATH = os.environ.get('PATH', "/snap/bin/firefox.geckodriver /snap/bin/firefox")
+    LD_LIBRARY_PATH = os.environ.get('LD_LIBRARY_PATH', "/snap/bin/firefox.geckodriver /snap/bin/firefox")
 
 
 # If you're not familiar with how to set Environment Variables you can do like this instead
