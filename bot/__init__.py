@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 service = Service(executable_path=ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service)
 from selenium.webdriver.common.by import By
 
 
