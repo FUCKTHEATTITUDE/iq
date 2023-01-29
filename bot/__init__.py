@@ -1,6 +1,7 @@
 import os
 from telegram.ext import Updater
 from config import Config
+from .restricted import restricted
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
