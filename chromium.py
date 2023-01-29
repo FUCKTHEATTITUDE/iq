@@ -11,6 +11,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from os import execl
 from sys import executable
+from bot import updater, dp, browser, restricted
 
 
 from bot.meet import meet
