@@ -9,7 +9,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 try:
 	BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 	print(BASE_DIR)
-	s = BASE_DIR + '/Profile/'
+	s = BASE_DIR + '/snap/bin/firefox'
 	print (s)
 	updater = Updater(token = Config.BOT_TOKEN, use_context=True)
 	dp = updater.dispatcher
