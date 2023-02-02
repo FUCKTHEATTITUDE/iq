@@ -1,0 +1,27 @@
+{
+	"name": "Google Meet Telegram Bot",
+  	"description": "Skip Online Lectures like a pro",
+  	"repository": "https://github.com/1337w0rm/YeetMeet",
+  	"keywords": ["selenium", "geckodriver", "python"],
+  	"env": {
+    "BOT_TOKEN": {
+    	"description": "Telegram Bot Token"
+    	},
+
+    "PASSWORD": {
+      "description": "Google account password"
+    	},
+
+    "USERNAME": {
+      "description": "Google Account username/Email."
+    	}
+
+  	},
+
+  	"buildpacks": [
+      {
+      }
+  ],
+
+  "stack": "heroku-20"
+}
