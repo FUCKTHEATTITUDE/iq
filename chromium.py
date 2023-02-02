@@ -4,17 +4,18 @@ import pickle
 from telegram.ext import CommandHandler, Job, run_async
 from telegram import ChatAction
 from config import Config
-from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 from os import execl
 from sys import executable
 from bot import updater, dp, browser, restricted
 
 
-from bot.meet import meet
 from bot.zoom import zoom
 
 if Config.SCHEDULE == True:
@@ -23,14 +24,14 @@ if Config.SCHEDULE == True:
 
 userId = Config.USERID
 
-@restricted
+
 @run_async
 def exit(update, context):
     context.bot.send_message(chat_id=userId, text="Restarting bot, Please wait!")
     browser.quit()
     execl(executable, executable, "chromium.py")
 
-@restricted
+
 @run_async
 def status(update, context):
     browser.save_screenshot("ss.png")
@@ -38,7 +39,7 @@ def status(update, context):
     context.bot.send_photo(chat_id=userId, photo=open('ss.png', 'rb'), timeout = 120)
     os.remove('ss.png')
 
-@restricted
+
 @run_async
 def help(update, context):
     context.bot.send_message(chat_id=userId, text="""/meet <link> -   Bunk a Google Meet meeting
@@ -51,7 +52,7 @@ def main():
     j = updater.job_queue
 
     dp.add_handler(CommandHandler("zoom", zoom))
-    dp.add_handler(CommandHandler("meet", meet))
+    
 
     if Config.SCHEDULE == True:
         mJobQueue()
