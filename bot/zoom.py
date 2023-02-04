@@ -41,6 +41,8 @@ def joinZoom(context, url_meet, passStr):
         for i in range(0, 20):
             browser.find_element(By.CSS_SELECTOR, "#inputname").send_keys(Keys.BACK_SPACE)
         browser.find_element(By.CSS_SELECTOR, "#inputname").send_keys(name)
+        time.sleep(20)
+        WebDriverWait(browser, 2400).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="uc-btn-accept-banner"]'))).click()
         time.sleep(10)
         WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#inputpasscode"))).click()
         time.sleep(10)
