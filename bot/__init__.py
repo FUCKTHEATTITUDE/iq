@@ -24,6 +24,7 @@ try:
 	options.headless = True
 	options.add_argument(f'user-agent={user_agent}')
 	options.add_experimental_option("detach", True)
+	options.add_experimental_option("prefs", {"profile.default_content_setting_values.cookies": 2})
 	options.add_argument("--window-size=1920,800")
 	options.add_argument("--allow-file-access-from-files")
 	options.add_argument('--no-sandbox')
