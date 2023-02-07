@@ -23,12 +23,10 @@ try:
 	user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
 	options.headless = True
 	options.add_argument(f'user-agent={user_agent}')
-	options.add_experimental_option("prefs", {"profile.default_content_setting_values.cookies": 2})
-	options.add_experimental_option("prefs", {"profile.block_third_party_cookies": True})
+	options.add_experimental_option("detach", True)
 	options.add_argument("--window-size=1920,800")
 	options.add_argument("--allow-file-access-from-files")
 	options.add_argument('--no-sandbox')
-	options.add_argument('--disable-popup-blocking')
 	options.add_argument('--disable-dev-shm-usage')
 	options.add_argument('--use-fake-device-for-media-stream')
 	options.add_argument('--use-fake-ui-for-media-stream')

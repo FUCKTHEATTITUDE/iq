@@ -24,7 +24,7 @@ userId = Config.USERID
 def joinZoom(context, url_meet, passStr):
 
     def students(context):
-        print("Running Student Check")
+        print("Running")
 
         browser.find_element_by_xpath('//*[@id="wc-container-left"]/div[4]/div/div/div/div[1]').click()
         number = WebDriverWait(browser, 2400).until(EC.presence_of_element_located((By.XPATH, '//*[@id="wc-footer"]/div/div[2]/button[1]/div/div/span'))).text
@@ -34,12 +34,11 @@ def joinZoom(context, url_meet, passStr):
             browser.quit()
             execl(executable, executable, "chromium.py")
     try:
-        name = "Vansh Santoshi"
+        name = "sidharth"
         browser.get('https://zoom.us')
         browser.get('https://zoom.us/wc/join/'+ url_meet)
         WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#inputname"))).click()
         for i in range(0, 20):
-            WebDriverWait(browser, 2400).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="uc-btn-accept-banner"]'))).click()
             browser.find_element(By.CSS_SELECTOR, "#inputname").send_keys(Keys.BACK_SPACE)
         browser.find_element(By.CSS_SELECTOR, "#inputname").send_keys(name)
         time.sleep(10)
