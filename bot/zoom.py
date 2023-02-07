@@ -38,6 +38,10 @@ def joinZoom(context, url_meet, passStr):
         browser.get('https://zoom.us')
         browser.get('https://zoom.us/wc/join/'+ url_meet)
         WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#inputname"))).click()
+        elem = browser.find_element(
+            by='id', value='onetrust-accept-btn-handler')
+        elem.click()
+        time.sleep(1)
         for i in range(0, 20):
             browser.find_element(By.CSS_SELECTOR, "#inputname").send_keys(Keys.BACK_SPACE)
         browser.find_element(By.CSS_SELECTOR, "#inputname").send_keys(name)
